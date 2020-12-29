@@ -118,7 +118,7 @@ describe("findWinner", () => {
       ["X", null, "0"],
       ["X", null, "0"]
   ];
-  test.only("should return 0 if player 0 has won", () => {
+  test("should return 0 if player 0 has won", () => {
       expect(findWinner(board2)).toEqual("0");   
   });
 
@@ -127,7 +127,7 @@ describe("findWinner", () => {
       ["X", "0", null],
       ["X", null, "X"]
   ];
-  test.only("should return null if no player has won", () => {
+  test("should return null if no player has won", () => {
       expect(findWinner(board3)).toEqual(null);   
   });
 
@@ -136,7 +136,7 @@ describe("findWinner", () => {
       ["0", "X", "0"],
       [null, null, "X"]
   ];
-  test.only("should return X if player X has won diagonally", () => {
+  test("should return X if player X has won diagonally", () => {
       expect(findWinner(board5)).toEqual("X");   
   })
 });
