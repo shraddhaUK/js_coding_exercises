@@ -4,6 +4,9 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  const numString =n.toString();
+  const numArr =[...numString].map(ch => Number.parseInt(ch))
+  return numArr.reduce((acc,m)=>acc+m,0)
 };
 
 /**
@@ -17,6 +20,13 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+ let arr =[];
+ let gap=step>1 ? step : 1
+ for(var i =start ; i<= end; i+=gap){
+   arr.push(i);
+ }
+ return arr;
+ 
 };
 
 /**
@@ -51,8 +61,21 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+  let screenArr = [];
+  for (let i = 0; i < users.length; i++) {
+    let totalUserMin = 0;
+    users[i].screenTime.forEach(d => {
+      if (d.date === date) {
+        let dailyscreen = Object.values(d.usage);
+        dailyscreen.forEach(min => { totalUserMin += min; });
+      };
+    });
+    if (totalUserMin > 100) {
+      screenArr.push(users[i].username);
+    };
+  };
+  return screenArr;
 };
-
 /**
  * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
  * https://www.youtube.com/watch?v=u_atXp-NF6w
@@ -65,6 +88,14 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  var rgbDecimal = [];
+ 
+    redCode = parseInt(hexStr.substring(1,3), 16)
+    greenCode = parseInt(hexStr.substring(3,5), 16)
+    blueCode = parseInt(hexStr.substring(5,7), 16)
+  
+  return 'rgb(' +redCode+','+greenCode+',' +blueCode+')'
+  //
 };
 
 /**
@@ -79,6 +110,16 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  function allTheSame(array) {
+    var first = array[0];
+    return array.every(function(element) {
+      return element === first ? first : ''
+    });
+
+    const result =board.map(row => allTheSame(row))
+    console.log(result)
+    return result.filter(Boolean).toString
+}
 };
 
 module.exports = {
