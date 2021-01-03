@@ -30,12 +30,11 @@ return result;
  * @returns {String}
  */
 const getComplementaryDNA = str => {
-  if (str === undefined) throw new Error("str is required");
   const map = { "T" :"A" ,"A":"T","G":"C","C":"G"}
-const isValid = isValidDNA(str)
-const arr = ([...str].map(s => map[s] )).join('')
-return arr
-
+  const isValid = isValidDNA(str)
+  if (str === undefined) throw new Error("str is required");
+  if(isValid)
+  return ([...str].map(s => map[s] )).join('')
 };
 
 /**

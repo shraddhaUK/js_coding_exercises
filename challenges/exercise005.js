@@ -45,10 +45,21 @@ return values.some(item => item.toString().toLowerCase().search(searchTerm.toLow
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
-  const arr =str.split(' ')
-  const map = arr.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
- return map.forEach(`map.get('${key}'): ${value}`)
-};
+    str = str.toLowerCase().replace(/[^a-zA-Z ]/g, "");
+    let words = str.split(/\s+/);
+    const wordcount = words.reduce((acc, val) => {
+      if (!acc[val]) {
+        acc[val] = 1;
+        return acc;
+      } 
+      else {
+        acc[val] = acc[val] + 1;
+        return acc;
+      }
+    }, {});
+    return wordcount;
+  };
+
 
 module.exports = {
   findNextNumber,

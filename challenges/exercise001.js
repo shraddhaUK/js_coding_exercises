@@ -1,61 +1,52 @@
 function capitalize(word) {
-  if (word === undefined) 
-      throw new Error("word is required");
+
+  if (word === undefined) throw new Error("word is required");
   else
-    var wordCapitalized = word.charAt(0).toUpperCase() + word.slice(1);
-  return wordCapitalized;
+  return  word.charAt(0).toUpperCase() + word.slice(1);
+  
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-
-  function myFunction(f1,l1) {
-    f1 = f1.charAt(0);
-    l1 = l1.charAt(0);
-    return f1 + "." + l1;
-  } 
-  return myFunction(firstName, lastName);
+  else
+  return firstName.charAt(0) + "." + lastName.charAt(0);
 }
 
 function addVAT(originalPrice, vatRate) {
+  let vatAddedPrice =(originalPrice*vatRate/100) + originalPrice;
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-
- var vatAddedPrice =(originalPrice*vatRate/100) + originalPrice;
- return Number.isInteger(vatAddedPrice)?vatAddedPrice : Number.parseFloat(vatAddedPrice.toFixed(2));
+  else
+  return Number.isInteger(vatAddedPrice)?vatAddedPrice : Number.parseFloat(vatAddedPrice.toFixed(2));
 }
 
 function getSalePrice(originalPrice, reduction) {
+  let salePrice =originalPrice - (originalPrice * reduction/100) ;
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  var salePrice =originalPrice - (originalPrice * reduction/100) ;
+ else
  return Number.isInteger(salePrice)?salePrice : Number.parseFloat(salePrice.toFixed(2));
 }
 
 function getMiddleCharacter(str) {
-  if (str === undefined) throw new Error("str is required");
   const length= str.length;
   const middle= Math.abs(length/2);
+  if (str === undefined) throw new Error("str is required");
+  else
   return (length%2)!=0?str.charAt(middle):str.charAt(middle-1)+str.charAt(middle);
 }
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-
-  
- return word.split("").reverse().join("");
+  else
+  return word.split("").reverse().join("");
 }
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var reversedWords =[];
-
-  words.forEach(element => {
-    element=element.split("").reverse().join("");
-    reversedWords.push(element);
-  });
-  return reversedWords;
+  else
+  return words.map(element => (element.split("").reverse().join("")));
 }
 
 function countLinuxUsers(users) {
@@ -71,9 +62,10 @@ function countLinuxUsers(users) {
 }
 
 function getMeanScore(scores) {
-  if (scores === undefined) throw new Error("scores is required");
   const average = n => n.reduce( ( prev, cur ) => prev + cur, 0 ) / n.length;
   const meanScore =average(scores);
+  if (scores === undefined) throw new Error("scores is required");
+  else
   return Number.isInteger(meanScore)?meanScore : Number.parseFloat(meanScore.toFixed(2));
 }
 

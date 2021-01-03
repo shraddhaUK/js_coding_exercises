@@ -22,7 +22,7 @@ const createRange = (start, end, step) => {
   if (end === undefined) throw new Error("end is required");
  let arr =[];
  let gap=step>1 ? step : 1
- for(var i =start ; i<= end; i+=gap){
+ for(let  i =start ; i<= end; i+=gap){
    arr.push(i);
  }
  return arr;
@@ -88,7 +88,7 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
-  var rgbDecimal = [];
+  let  rgbDecimal = [];
  
     redCode = parseInt(hexStr.substring(1,3), 16)
     greenCode = parseInt(hexStr.substring(3,5), 16)
