@@ -20,11 +20,11 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
- let arr =[];
- let gap=step>1 ? step : 1
- for(let  i =start ; i<= end; i+=gap){
-   arr.push(i);
- }
+  let arr =[];
+  let gap=step>1 ? step : 1
+  for(let  i =start ; i<= end; i+=gap){
+    arr.push(i);
+  }
  return arr;
  
 };
@@ -88,14 +88,10 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
-  let  rgbDecimal = [];
- 
-    redCode = parseInt(hexStr.substring(1,3), 16)
-    greenCode = parseInt(hexStr.substring(3,5), 16)
-    blueCode = parseInt(hexStr.substring(5,7), 16)
-  
+  redCode = parseInt(hexStr.substring(1,3), 16)
+  greenCode = parseInt(hexStr.substring(3,5), 16)
+  blueCode = parseInt(hexStr.substring(5,7), 16)
   return 'rgb(' +redCode+','+greenCode+',' +blueCode+')'
-  //
 };
 
 /**

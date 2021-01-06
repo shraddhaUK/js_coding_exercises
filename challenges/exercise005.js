@@ -1,17 +1,17 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
- const i=nums.indexOf(n)
- return i<0 || i === nums.length-1 ? null : nums[i+1]
+  const i=nums.indexOf(n)
+  return i<0 || i === nums.length-1 ? null : nums[i+1]
 };
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
   let countZeros =0;
   let countOnes =0;
-const arr = [...str];
-arr.forEach(item => item === '0' ? countZeros++ :   countOnes++)
-return { 1 : countOnes, 0 : countZeros}
+  const arr = [...str];
+  arr.forEach(item => item === '0' ? countZeros++ :   countOnes++)
+  return { 1 : countOnes, 0 : countZeros}
 };
 
 const reverseNumber = n => {

@@ -10,21 +10,19 @@ function isFromManchester(person) {
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
-  else
   return Math.ceil(people/40);
 }
 
 function countSheep(arr) {
-  let count=0;
   if (arr === undefined) throw new Error("arr is required");
+  let count=0;
   arr.forEach(element => element === 'sheep' ? count++ : count);
   return count;
 }
 
 function hasMPostCode(person) {
-  const address= person.address;
   if (person === undefined) throw new Error("person is required");
-  else
+  const address= person.address;
   return address.postCode.charAt(0) === 'M' && address.city ==='Manchester';
 }
 

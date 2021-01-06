@@ -1,26 +1,22 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  else
-  return nums.map(num => num < 1 ? num : '').filter(Boolean);
+  return nums.filter(num => num < 1);
 }
 
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  else
-  return names.map(name => name.startsWith(char) ? name : '').filter(Boolean);
+  return names.filter(name => name.startsWith(char));
 }
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  else
-  return words.map(word => word.startsWith('to ') ? word : '').filter(Boolean);
+  return words.filter(word => word.startsWith('to '));
 }
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  else
-  return nums.map(num => Number.isInteger(num) ? num : '').filter(Boolean);
+  return nums.filter(num=>Number.isInteger(num));
 }
 
 function getCities(users) {
@@ -36,8 +32,8 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  else
-  return sentences.map(sentence => sentence.toLowerCase().includes(str.toLowerCase()) ? sentence : '').filter(Boolean)
+  return sentences.filter(sentence => sentence.toLowerCase().includes(str.toLowerCase()))
+
 }
 
 function getLongestSides(triangles) {

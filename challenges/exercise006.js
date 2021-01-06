@@ -6,8 +6,8 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
-const arr1 = arr.map(num => (num%3 ===0 || num%5 === 0) ? num : 0 )
-return arr1.reduce((acc,c) => acc+c);
+  const arr1 = arr.map(num => (num%3 ===0 || num%5 === 0) ? num : 0 )
+  return arr1.reduce((acc,c) => acc+c);
 };
 
 /**
@@ -17,11 +17,11 @@ return arr1.reduce((acc,c) => acc+c);
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
-const arr = ['A','T','C','G']
-const strarr =[...str]
-let result =true;
-strarr.forEach(s => !arr.includes(s) ? result = false : result =true)
-return result;
+  const arr = ['A','T','C','G']
+  const strarr =[...str]
+  let result =true;
+  strarr.forEach(s => !arr.includes(s) ? result = false : result =true)
+  return result;
 };
 
 /**
@@ -30,9 +30,9 @@ return result;
  * @returns {String}
  */
 const getComplementaryDNA = str => {
+  if (str === undefined) throw new Error("str is required");
   const map = { "T" :"A" ,"A":"T","G":"C","C":"G"}
   const isValid = isValidDNA(str)
-  if (str === undefined) throw new Error("str is required");
   if(isValid)
   return ([...str].map(s => map[s] )).join('')
 };

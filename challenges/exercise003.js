@@ -6,8 +6,7 @@ function getSquares(nums) {
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   let arr =words.map((item,index) =>
-  index === 0 ? item.toLowerCase() : item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
-  )
+  index === 0 ? item.toLowerCase() : item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
   return arr.join('');
 }
 
@@ -27,10 +26,7 @@ function checkIngredients(menu, ingredient) {
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
- const arr =arr1.map(item => arr2.includes(item) ? item : '')
- const filtered= arr.filter(Boolean).sort()
- const sorted =filtered.sort()
- const unique =new Set(sorted);
+ const unique =new Set(arr1.filter(item => arr2.includes(item)).sort());
  return [...unique]
 }
 
